@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer playerGnomed;
 
     ImageView mainImage;
-        // testing commit things
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
