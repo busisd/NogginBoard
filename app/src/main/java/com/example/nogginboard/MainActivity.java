@@ -23,7 +23,19 @@ public class MainActivity extends FragmentActivity {
 
     private ImageView mainImage;
 
-    public static final int NUM_PAGES = 3;
+    private MediaPlayer playerArkDie;
+    private MediaPlayer playerEsto;
+    private MediaPlayer playerEtimos;
+    private MediaPlayer playerIsvoli;
+    private MediaPlayer playerKalos;
+    private MediaPlayer playerLeje;
+    private MediaPlayer playerMalista;
+    private MediaPlayer playerNe;
+    private MediaPlayer playerProceshe;
+    private MediaPlayer playerProstagma;
+    private MediaPlayer playerVulome;
+
+    public static final int NUM_PAGES = 2;
     private ViewPager mPager;
     private PagerAdapter pagerAdapter;
 
@@ -32,14 +44,15 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setUpMediaPlayers();
+        setUpGnomeMediaPlayers();
+        setUpAomMediaPlayers();
 
         mPager = findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(pagerAdapter);
     }
 
-    private void setUpMediaPlayers(){
+    private void setUpGnomeMediaPlayers(){
         playerFastest = MediaPlayer.create(getApplicationContext(), R.raw.gnomefastest);
         playerLaugh = MediaPlayer.create(getApplicationContext(), R.raw.gnomelaugh);
         playerHello = MediaPlayer.create(getApplicationContext(), R.raw.gnomehello);
@@ -55,6 +68,20 @@ public class MainActivity extends FragmentActivity {
                 mainImage.setImageResource(R.drawable.gnomeface);
             }
         });
+    }
+
+    private void setUpAomMediaPlayers(){
+        playerArkDie = MediaPlayer.create(getApplicationContext(), R.raw.die);
+        playerEsto = MediaPlayer.create(getApplicationContext(), R.raw.esto);
+        playerEtimos = MediaPlayer.create(getApplicationContext(), R.raw.etimos);
+        playerIsvoli = MediaPlayer.create(getApplicationContext(), R.raw.isvoli);
+        playerKalos = MediaPlayer.create(getApplicationContext(), R.raw.kalos);
+        playerLeje = MediaPlayer.create(getApplicationContext(), R.raw.leje);
+        playerMalista = MediaPlayer.create(getApplicationContext(), R.raw.malista);
+        playerNe = MediaPlayer.create(getApplicationContext(), R.raw.ne);
+        playerProceshe = MediaPlayer.create(getApplicationContext(), R.raw.proceshe);
+        playerProstagma = MediaPlayer.create(getApplicationContext(), R.raw.prostagma);
+        playerVulome = MediaPlayer.create(getApplicationContext(), R.raw.vulome);
     }
 
     @Override
@@ -73,7 +100,11 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new GnomeFragment();
+            if (position==0) {
+                return new GnomeFragment();
+            } else {
+                return new AomFragment();
+            }
         }
 
         @Override
@@ -117,6 +148,50 @@ public class MainActivity extends FragmentActivity {
 
     public void playSoundGnomed(View view){
         playerGnomed.start();
+    }
+
+    public void playSoundArkDie(View view){
+        playerArkDie.start();
+    }
+
+    public void playSoundEsto(View view){
+        playerEsto.start();
+    }
+
+    public void playSoundEtimos(View view){
+        playerEtimos.start();
+    }
+
+    public void playSoundIsvoli(View view){
+        playerIsvoli.start();
+    }
+
+    public void playSoundKalos(View view){
+        playerKalos.start();
+    }
+
+    public void playSoundLeje(View view){
+        playerLeje.start();
+    }
+
+    public void playSoundMalista(View view){
+        playerMalista.start();
+    }
+
+    public void playSoundNe(View view){
+        playerNe.start();
+    }
+
+    public void playSoundProceshe(View view){
+        playerProceshe.start();
+    }
+
+    public void playSoundProstagma(View view){
+        playerProstagma.start();
+    }
+
+    public void playSoundVulome(View view){
+        playerVulome.start();
     }
 
 }

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/arkImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/gnomeImageDescription"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arkantos" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonEsto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundEsto"
+                    android:text="esto" />
+
+                <Button
+                    android:id="@+id/buttonEtimos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundEtimos"
+                    android:text="etimos" />
+
+                <Button
+                    android:id="@+id/buttonIsvoli"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundIsvoli"
+                    android:text="isvoli" />
+
+                <Button
+                    android:id="@+id/buttonKalos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundKalos"
+                    android:text="kalos" />
+
+                <Button
+                    android:id="@+id/buttonLeje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundLeje"
+                    android:text="leje" />
+
+                <Button
+                    android:id="@+id/buttonMalista"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundMalista"
+                    android:text="malista" />
+
+                <Button
+                    android:id="@+id/buttonNe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundNe"
+                    android:text="ne" />
+
+                <Button
+                    android:id="@+id/buttonProceshe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundProceshe"
+                    android:text="proceshe" />
+
+                <Button
+                    android:id="@+id/buttonProstagma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundProstagma"
+                    android:text="@string/prostagma" />
+
+                <Button
+                    android:id="@+id/buttonVulome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundVulome"
+                    android:text="vulome" />
+
+                <Button
+                    android:id="@+id/buttonArkDie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playSoundArkDie"
+                    android:text="RIP" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

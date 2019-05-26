@@ -9,6 +9,6 @@
     <string name="youvebeen">And you\'ve been&#8230;</string>
     <string name="gnomed">GNOMED!</string>
     <string name="gnomeImageDescription" translatable="false">An image of a gnome</string>
-    <string name="lorem_ipsum"> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </string>
-    <string name="lorem_ipsum2"> Morem mipsum Morem mipsum Morem mipsum Morem mipsum Morem mipsum Morem mipsum Morem mipsum  </string>
+    <string name="arkImageDescription" translatable="false">An image of Arkantos</string>
+    <string name="prostagma">Prostagma?</string>
 </resources>
