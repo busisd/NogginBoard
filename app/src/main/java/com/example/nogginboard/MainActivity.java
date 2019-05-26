@@ -1,8 +1,10 @@
 package com.example.nogginboard;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 mainImage.setImageResource(R.drawable.gnomeface);
             }
         });
+
+//        if (savedInstanceState == null){
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//            ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
+//            transaction.replace(R.id.frame_layout, fragment);
+//            transaction.commit();
+//        }
     }
 
     public void playSoundFastest(View view){
@@ -78,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playSoundGnomed(View view){
-        playerGnomed.start();
+        Intent intent = new Intent(this, ScreenSlidePagerActivity.class);
+        startActivity(intent);
+
+        //playerGnomed.start();
     }
 
 }
