@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">NogginBoard</string>
     <string name="fastest">Fastest Gnome in the West</string>
-    <string name="laugh">*Laugh*</string>
+    <string name="laugh" translatable="false">*Laugh*</string>
     <string name="hello">Hello me ol\' chum!</string>
     <string name="gnelf">I\'m gnot a gnelf</string>
     <string name="gnoblin">I\'m gnot a gnoblin</string>
     <string name="gnome">I\'m a gnome!</string>
-    <string name="youvebeen">And you\'ve been...</string>
+    <string name="youvebeen">And you\'ve been&#8230;</string>
     <string name="gnomed">GNOMED!</string>
-    <string name="gnomeImageDescription">An image of a gnome.</string>
+    <string name="gnomeImageDescription" translatable="false">An image of a gnome</string>
+    <string name="lorem_ipsum"> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </string>
 </resources>
