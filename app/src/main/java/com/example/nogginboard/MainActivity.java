@@ -21,7 +21,7 @@ public class MainActivity extends FragmentActivity {
     private MediaPlayer playerYouveBeen;
     private MediaPlayer playerGnomed;
 
-    ImageView mainImage;
+    private ImageView mainImage;
 
     public static final int NUM_PAGES = 3;
     private ViewPager mPager;
@@ -48,8 +48,6 @@ public class MainActivity extends FragmentActivity {
         playerGnome = MediaPlayer.create(getApplicationContext(), R.raw.gnomegnome);
         playerYouveBeen = MediaPlayer.create(getApplicationContext(), R.raw.gnomeyouvebeen);
         playerGnomed = MediaPlayer.create(getApplicationContext(), R.raw.gnomegnomed);
-
-        mainImage = findViewById(R.id.gnomeImage);
 
         playerFastest.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -86,6 +84,10 @@ public class MainActivity extends FragmentActivity {
 
     public void playSoundFastest(View view){
         playerFastest.start();
+
+        if (mainImage == null) {
+            mainImage = findViewById(R.id.gnomeImage);
+        }
         mainImage.setImageResource(R.drawable.gnomeface2);
     }
 
