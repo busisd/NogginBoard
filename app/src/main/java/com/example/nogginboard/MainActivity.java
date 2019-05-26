@@ -1,20 +1,17 @@
 package com.example.nogginboard;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
     private MediaPlayer playerFastest;
     private MediaPlayer playerLaugh;
     private MediaPlayer playerHello;
@@ -26,11 +23,23 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView mainImage;
 
+    public static final int NUM_PAGES = 3;
+    private ViewPager mPager;
+    private PagerAdapter pagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setUpMediaPlayers();
+
+        mPager = findViewById(R.id.pager);
+        pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPager.setAdapter(pagerAdapter);
+    }
+
+    private void setUpMediaPlayers(){
         playerFastest = MediaPlayer.create(getApplicationContext(), R.raw.gnomefastest);
         playerLaugh = MediaPlayer.create(getApplicationContext(), R.raw.gnomelaugh);
         playerHello = MediaPlayer.create(getApplicationContext(), R.raw.gnomehello);
@@ -41,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         playerGnomed = MediaPlayer.create(getApplicationContext(), R.raw.gnomegnomed);
 
         mainImage = findViewById(R.id.gnomeImage);
+        mainImage.setImageResource(R.drawable.gnomeface);
 
         playerFastest.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -48,13 +58,31 @@ public class MainActivity extends AppCompatActivity {
                 mainImage.setImageResource(R.drawable.gnomeface);
             }
         });
+    }
 
-//        if (savedInstanceState == null){
-//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//            ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
-//            transaction.replace(R.id.frame_layout, fragment);
-//            transaction.commit();
-//        }
+    @Override
+    public void onBackPressed() {
+        if (mPager.getCurrentItem() == 0) {
+            super.onBackPressed();
+        } else {
+            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+        }
+    }
+
+    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return new ScreenSlidePageFragment();
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
+        }
     }
 
     public void playSoundFastest(View view){
@@ -87,10 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playSoundGnomed(View view){
-        Intent intent = new Intent(this, ScreenSlidePagerActivity.class);
-        startActivity(intent);
-
-        //playerGnomed.start();
+        playerGnomed.start();
     }
 
 }
