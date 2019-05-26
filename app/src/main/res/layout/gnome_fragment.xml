@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gnomeImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/gnomeImageDescription"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/gnomeface" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonFastest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundFastest"
+                android:text="@string/fastest" />
+
+            <Button
+                android:id="@+id/buttonLaugh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundLaugh"
+                android:text="@string/laugh" />
+
+            <Button
+                android:id="@+id/buttonHello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundHello"
+                android:text="@string/hello" />
+
+            <Button
+                android:id="@+id/buttonGnelf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundGnelf"
+                android:text="@string/gnelf" />
+
+            <Button
+                android:id="@+id/buttonGnoblin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundGnoblin"
+                android:text="@string/gnoblin" />
+
+            <Button
+                android:id="@+id/buttonGnome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundGnome"
+                android:text="@string/gnome" />
+
+            <Button
+                android:id="@+id/buttonYouveBeen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundYouveBeen"
+                android:text="@string/youvebeen" />
+
+            <Button
+                android:id="@+id/buttonGnomed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="playSoundGnomed"
+                android:text="@string/gnomed" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

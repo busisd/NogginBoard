@@ -50,7 +50,6 @@ public class MainActivity extends FragmentActivity {
         playerGnomed = MediaPlayer.create(getApplicationContext(), R.raw.gnomegnomed);
 
         mainImage = findViewById(R.id.gnomeImage);
-        mainImage.setImageResource(R.drawable.gnomeface);
 
         playerFastest.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -76,7 +75,7 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ScreenSlidePageFragment();
+            return new GnomeFragment();
         }
 
         @Override
